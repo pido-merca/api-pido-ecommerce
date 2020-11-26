@@ -20,4 +20,9 @@ class Subcategoria extends Model
     {
         return $this->belongsTo('App\Models\CategoriaAliado','cod_categoria');
     }
+
+    public function aliados()
+    {
+        return $this->belongsToMany('App\Models\Aliado','aliado_subcategoria','cod_subcategoria','cod_aliado');
+    }
 }

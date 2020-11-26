@@ -27,13 +27,13 @@ class Aliado extends Model
         return $this->belongsTo('App\Models\Plan','cod_plan');
     }
 
-    public function aliadosSubcategoria()
-    {
-        return $this->hasMany('App\Models\AliadoSubcategoria','cod_aliado');
-    }
-
     public function municipio()
     {
         return $this->belongsTo('App\Models\Municipio','cod_municipio');
+    }
+
+    public function subcategorias()
+    {
+        return $this->belongsToMany('App\Models\Subcategoria','aliado_subcategoria','cod_aliado','cod_subcategoria');
     }
 }

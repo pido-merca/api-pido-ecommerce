@@ -21,4 +21,14 @@ class ProductoAliado extends Model
     {
         return $this->belongsToMany('App\Models\Pedido','detalle_pedido','cod_producto_aliado','cod_pedido');
     }
+
+    public function aliado()
+    {
+        return $this->belongsTo('App\Models\Aliado','cod_aliado');
+    }
+
+    public function productoAdmon()
+    {
+        return $this->belongsTo('App\Models\ProductoAdmon','cod_producto_admon');
+    }
 }
