@@ -41,18 +41,15 @@ class Aliado extends Model
     public function scopeGetAlliesToSubcategory($query)
     {
         return $query->from('aliado as a')
-        ->join('aliado_subcategoria as a_s','a.id','=','a_s.cod_aliado')
-        ->join('subcategoria as s','a_s.cod_subcategoria','=','s.id')
+        ->join('aliado_subcategoria as a_s','a_s.cod_aliado','=','a.id')
+        ->join('subcategoria as s','s.id','=','a_s.cod_subcategoria')
         ->where([
-            ['s.id','=','1'],
+            ['s.id','=','2'],
         ])
         ->select(
-            'a.id,
-             a.nombre,
-             a.camara_comercio,
-             a.telefono,
-             s.slug,
-             s.estado'
+            'a.id',
+             'a.nombre',
+             'a.imagen',
         );
     }
 }
