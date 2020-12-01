@@ -23,7 +23,7 @@ class CreateSubcategoriaTable extends Migration
 
             $table->foreign('cod_categoria')
                 ->references('id')
-                ->on('categoria')
+                ->on('categoria_aliado')
                 ->onDelete('RESTRICT')
                 ->onUpdate('CASCADE');    
             $table->timestamps();
