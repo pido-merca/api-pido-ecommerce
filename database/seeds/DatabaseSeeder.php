@@ -20,5 +20,10 @@ class DatabaseSeeder extends Seeder
         $this->call(SubcategoriaSeeder::class);
         $this->call(AliadoSeeder::class);
         $this->call(AliadoSubcategoriaSeeder::class);
+        $this->call(MarcaSeeder::class);
+        $this->call(CategoriaSeeder::class);
+        $this->call(MedidaSeeder::class);
+        $this->call(SubmedidaSeeder::class);
+        $this->call(ProductoAdmonSeeder::class);
     }
 }
