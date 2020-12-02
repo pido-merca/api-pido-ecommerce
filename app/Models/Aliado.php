@@ -36,4 +36,21 @@ class Aliado extends Model
     {
         return $this->belongsToMany('App\Models\Subcategoria','aliado_subcategoria','cod_aliado','cod_subcategoria');
     }
+
+    
+    public function scopeGetAlliesToSubcategory($query)
+    {
+        return $query->from('aliado as a')
+        ->join('aliado_subcategoria as a_s','a_s.cod_aliado','=','a.id')
+        ->join('subcategoria as s','s.id','=','a_s.cod_subcategoria')
+        ->where([
+            ['s.id','=','2'],
+        ])
+        ->select(
+            'a.id',
+             'a.nombre',
+             'a.imagen',
+        );
+    }
 }
+
