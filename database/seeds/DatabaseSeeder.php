@@ -25,5 +25,6 @@ class DatabaseSeeder extends Seeder
         $this->call(MedidaSeeder::class);
         $this->call(SubmedidaSeeder::class);
         $this->call(ProductoAdmonSeeder::class);
+        
     }
 }
