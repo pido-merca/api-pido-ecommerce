@@ -15,9 +15,9 @@ class CreateProductoAdmonTable extends Migration
     {
         Schema::create('producto_admon', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('cod_marca')->unsigned();
+            $table->bigInteger('cod_marca')->unsigned()->nullable();
             $table->bigInteger('cod_categoria')->unsigned();
-            $table->bigInteger('cod_submedida')->unsigned();
+            $table->bigInteger('cod_submedida')->unsigned()->nullable();
 
             $table->string('nombre', 100);
             $table->string('descripcion', 100);
@@ -26,7 +26,7 @@ class CreateProductoAdmonTable extends Migration
             $table->foreign('cod_marca')
                 ->references('id')
                 ->on('marca')
-                ->onDelete('RESTRICT')
+                ->onDelete('SET NULL')
                 ->onUpdate('CASCADE');
 
             $table->foreign('cod_categoria')
@@ -38,7 +38,7 @@ class CreateProductoAdmonTable extends Migration
             $table->foreign('cod_submedida')
                 ->references('id')
                 ->on('submedida')
-                ->onDelete('RESTRICT')
+                ->onDelete('SET NULL')
                 ->onUpdate('CASCADE');
             $table->timestamps();
         });

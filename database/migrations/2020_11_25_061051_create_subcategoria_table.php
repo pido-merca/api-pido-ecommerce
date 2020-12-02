@@ -18,7 +18,7 @@ class CreateSubcategoriaTable extends Migration
             $table->bigInteger('cod_categoria')->unsigned();
 
             $table->string('nombre_subcategoria', 50);
-            $table->string('slug')->UNIQUE();
+            $table->string('slug')->unique();
             $table->integer('estado');
 
             $table->foreign('cod_categoria')

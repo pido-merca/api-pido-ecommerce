@@ -19,12 +19,15 @@ class CreateAliadoTable extends Migration
             $table->bigInteger('cod_municipio')->unsigned();
 
             $table->string('nombre', 50);
+            $table->string('slug')->unique();
             $table->string('camara_comercio', 40);
             $table->string('rut', 40);
             $table->string('telefono', 20);
             $table->string('correo', 50);
             $table->date('fecha_inscripcion');
             $table->string('imagen', 250);
+            $table->string('hora_inicio');
+            $table->string('hora_cierre');
             $table->integer('estado');
 
             $table->foreign('cod_plan')

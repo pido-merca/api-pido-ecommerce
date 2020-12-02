@@ -1,43 +1,34 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class MedidaSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
+   
     public function run()
     {
         DB::table('medida')->insert([
             'id' => 1,
-            'nom_medida' => 100
+            'nom_medida' => 'Unidad'
 
         ]);
 
         DB::table('medida')->insert([
             'id' => 2,
-            'nom_medida' => 150
+            'nom_medida' => 'Peso'
 
         ]);
 
         DB::table('medida')->insert([
             'id' => 3,
-            'nom_medida' => 200
+            'nom_medida' => 'Volumen'
 
         ]);
 
         DB::table('medida')->insert([
             'id' => 4,
-            'nom_medida' => 250
-
-        ]);
-
-        DB::table('medida')->insert([
-            'id' => 5,
-            'nom_medida' => 300
+            'nom_medida' => 'Longitud'
 
         ]);
     }

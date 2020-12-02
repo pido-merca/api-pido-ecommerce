@@ -15,7 +15,7 @@ class CreateMedidaTable extends Migration
     {
         Schema::create('medida', function (Blueprint $table) {
             $table->id();
-            $table->integer('nom_medida');
+            $table->string('nom_medida', 50);
             $table->timestamps();
         });
     }

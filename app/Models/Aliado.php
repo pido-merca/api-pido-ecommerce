@@ -8,9 +8,9 @@ class Aliado extends Model
 {
     protected $table = 'aliado';
     protected $fillable = [
-        'id', 'nombre','camara_comercio','rut','cod_municipio',
-        'telefono','correo','fecha_inscripcion',
-        'cod_plan','imagen','estado',
+        'id', 'nombre', 'camara_comercio', 'rut', 'cod_municipio',
+        'telefono', 'correo', 'fecha_inscripcion', 'slug', 'hora_inicio', 'hora_cierre',
+        'cod_plan', 'imagen', 'estado',
     ];
 
     protected $hidden = [
@@ -19,21 +19,21 @@ class Aliado extends Model
 
     public function productosAdmon()
     {
-        return $this->belongsToMany('App\Models\ProductoAdmon','producto_aliado','id_aliado','cod_producto_admon');
+        return $this->belongsToMany('App\Models\ProductoAdmon', 'producto_aliado', 'id_aliado', 'cod_producto_admon');
     }
 
     public function plan()
     {
-        return $this->belongsTo('App\Models\Plan','cod_plan');
+        return $this->belongsTo('App\Models\Plan', 'cod_plan');
     }
 
     public function municipio()
     {
-        return $this->belongsTo('App\Models\Municipio','cod_municipio');
+        return $this->belongsTo('App\Models\Municipio', 'cod_municipio');
     }
 
     public function subcategorias()
     {
-        return $this->belongsToMany('App\Models\Subcategoria','aliado_subcategoria','cod_aliado','cod_subcategoria');
+        return $this->belongsToMany('App\Models\Subcategoria', 'aliado_subcategoria', 'cod_aliado', 'cod_subcategoria');
     }
 }

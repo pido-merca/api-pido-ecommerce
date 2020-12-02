@@ -5,40 +5,36 @@ use Illuminate\Support\Facades\DB;
 
 class MarcaSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
+   
     public function run(){
         
         DB::table('marca')->insert([
             'id' => 1,
-            'nombre' => 'marca 1'
+            'nombre' => 'Golosinas'
 
         ]);
 
         DB::table('marca')->insert([
             'id' => 2,
-            'nombre' => 'marca 2'
+            'nombre' => 'Bimbo'
 
         ]);
 
         DB::table('marca')->insert([
             'id' => 3,
-            'nombre' => 'marca 3'
+            'nombre' => 'Jumbo'
 
         ]);
 
         DB::table('marca')->insert([
             'id' => 4,
-            'nombre' => 'marca 4'
+            'nombre' => 'Pantene'
 
         ]);
 
         DB::table('marca')->insert([
             'id' => 5,
-            'nombre' => 'marca 5'
+            'nombre' => 'Arroa'
 
         ]);
 

@@ -27,15 +27,6 @@ class CategoriaAliadoSeeder extends Seeder
             'nombre' => 'Alimentos preparados',
         ]);
 
-        CategoriaAliado::create([
-            'id' => '4',
-            'nombre' => 'Alimentos Congelados',
-        ]);
-
-        CategoriaAliado::create([
-            'id' => '5',
-            'nombre' => 'Alimentos',
-        ]);
     }
 }
 

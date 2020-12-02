@@ -16,21 +16,21 @@ class AliadoSubcategoriaSeeder extends Seeder
             'id' => '1',
             'cod_subcategoria' => '1',
             'cod_aliado' => '1',
-            'estado' => '0',
+            'estado' => '1',
         ]);
 
          AliadoSubcategoria::create([
             'id' => '2',
             'cod_subcategoria' => '2',
             'cod_aliado' => '2',
-            'estado' => '0',
+            'estado' => '1',
         ]);
 
          AliadoSubcategoria::create([
             'id' => '3',
             'cod_subcategoria' => '3',
             'cod_aliado' => '3',
-            'estado' => '0',
+            'estado' => '1',
         ]);
         
          AliadoSubcategoria::create([
