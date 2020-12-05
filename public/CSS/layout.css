@@ -1,0 +1,43 @@
+.bg-blue {
+    background-color: #3C8DBC !important;
+}
+
+.aside {
+    background-color: #222D32;
+    min-height: 100vh;
+}
+
+.aside ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.aside ul li {
+    text-decoration: none;
+    padding: 1em;
+    color: white;
+}
+
+.aside ul li a {
+    color: white;
+}
+
+.dropdown-menu {
+    background-color: #222D32;
+    border: none;
+}
+
+.dropdown-item:hover {
+    background-color: #3C8DBC !important;
+    border: none;
+}
+
+.dropdown-item:hover {
+    background-color: #222D32;
+    color: white;
+}
+
+.margen {
+    margin-top: 5em;
+}
