@@ -17,6 +17,6 @@ class Medida extends Model
 
     public function submedidas()
     {
-        return $this->hasMany('App\Models\Submedida','cod_medida');
+        return $this->hasMany('App\Models\Submedida', 'cod_medida');
     }
 }

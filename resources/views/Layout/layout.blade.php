@@ -76,7 +76,7 @@
         </div>
         <div class="col-9">
           <section class="dinamic-content d-flex justify-content-center">
-              <!-- @yield('contenido') -->
+               @yield('contenido') 
             
           </section>
         </div>
