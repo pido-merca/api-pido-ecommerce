@@ -8,13 +8,14 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
     integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
   <link rel="stylesheet" href="/CSS/layout.css">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 </head>
 
 <body>
   <div class="wrapper ">
     <nav class="navbar navbar-expand-lg navbar-light bg-blue fixed-top">
       <div class="container">
-        <a class="navbar-brand text-white" href="#"><strong>PideyMerco</strong></a>
+        <a class="navbar-brand text-white" href="/"><strong>PideyMerco</strong></a>
         <ul class="navbar-nav">
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" role="button"
@@ -36,14 +37,15 @@
               <div class="links">
                 <ul class="navbar-nav">
                   <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-white mt-5 href=" #" id="navbarDropdownMenuLink"
+                    <a class="nav-link dropdown-toggle text-white mt-5 font-weight-bold" id="navbarDropdownMenuLink"
                       role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Tabla1
+                      <i class="fas fa-table"></i>
+                      Aliado
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                      <a class="dropdown-item" href="#">Subtabla1</a>
-                      <a class="dropdown-item" href="#">Subtabla2</a>
-                      <a class="dropdown-item" href="#">Subtabla3</a>
+                      <a class="dropdown-item" href="{{ route('plan.index') }}">Plan</a>
+                      <a class="dropdown-item" href="{{ route('categoria-aliado.index') }}">CategoriaAliado</a>
+                      <a class="dropdown-item" href="{{ route('subcategoria.index') }}">Subcategoria</a>
                     </div>
                   </li>
                 </ul>
@@ -74,9 +76,9 @@
             </aside>
           </section>
         </div>
-        <div class="col-9">
+        <div class="col-10">
           <section class="dinamic-content d-flex justify-content-center">
-              <!-- @yield('contenido') -->
+              @yield('contenido')
             
           </section>
         </div>
