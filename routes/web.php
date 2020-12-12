@@ -19,7 +19,7 @@ Route::get('/', function () {
 Route::get('categoria',['as'=>'categoria.index', 'uses'=>'API\CategoriaController@index']);
 Route::get('categoria/{id}/delete',['as'=>'categoria.delete', 'uses'=>'API\CategoriaController@delete']);
 Route::post('categoria',['as'=>'categoria.store', 'uses'=>'API\CategoriaController@store']);
-Route::patch('categoria/{id}',['as'=>'categoria.update', 'uses'=>'API\CategoriaController@update']);
+Route::patch('categoria',['as'=>'categoria.update', 'uses'=>'API\CategoriaController@update']);
 Route::get('categoria/{id}/editar',['as'=>'categoria.editar', 'uses'=>'API\CategoriaController@edit']);
 
 Route::get('marca',['as'=>'marca.index', 'uses'=>'API\MarcaController@index']);
