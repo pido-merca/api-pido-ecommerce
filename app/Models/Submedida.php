@@ -22,6 +22,6 @@ class Submedida extends Model
 
     public function medida()
     {
-        return $this->belognsTo('App\Models\Medida','cod_medida');
+        return $this->belognsTo('App\Models\Medida');
     }
 }

@@ -1,39 +1,39 @@
 <div class="col-4">
     <div class="card mb-3 mt-2 card-item">
-        <div class="card-body p-1">
-            <h5 class="card-title text-center">Productos admon</h5>
+        <div class="card-body p-1 text-center">
+            <a class="card-title h5">Productos admon</a>
         </div>
     </div>
 </div>
 
 <div class="col-2">
     <div class="card mb-3 mt-2 card-item">
-        <div class="card-body p-1">
-            <h5 class="card-title text-center">Marca</h5>
+        <div class="card-body p-1 text-center">
+            <a class="card-title h5" href="{{route('marca.index')}}">Marca</a>
         </div>
     </div>
 </div>
 
 <div class="col-2">
     <div class="card mb-3 mt-2 card-item">
-        <div class="card-body p-1">
-            <h5 class="card-title text-center">Categoria</h5>
+        <div class="card-body p-1 text-center">
+            <a class="card-title h5" href="{{route('categoria.index')}}">Categoria</a>
         </div>
     </div>
 </div>
 
 <div class="col-2">
     <div class="card mb-3 mt-2 card-item">
-        <div class="card-body p-1">
-            <h5 class="card-title text-center">Medidas</h5>
+        <div class="card-body p-1 text-center">
+            <a class="card-title h5" href="{{route('medida.index')}}">Medidas</a>
         </div>
     </div>
 </div>
 
 <div class="col-2">
     <div class="card mb-3 mt-2 card-item">
-        <div class="card-body p-1">
-            <h5 class="card-title text-center">Submedidas</h5>
+        <div class="card-body p-1 text-center">
+            <a class="card-title h5" href="{{route('submedida.index')}}">Subcategoria</a>
         </div>
     </div>
 </div>

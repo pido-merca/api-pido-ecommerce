@@ -55,12 +55,17 @@ body::-webkit-scrollbar-thumb {
     border-radius: 10px;
     background-color: var(--gray-12);
 }
+
+a{
+    text-decoration: none !important;
+}
 .aside {
-    position: sticky;
+    position: fixed;
     left: 0;
     top: 0;
     z-index: 3;
-    height: 100vh;
+    width: 17%;
+    min-height: 100vh;
     background-color: var(--white);
     box-shadow: 0px 6px 32px 0px rgba(var(--brown-1_rgb), 0.16);
     -moz-box-shadow: 0px 6px 32px 0px rgba(var(--brown-1_rgb), 0.16);
@@ -104,13 +109,24 @@ body::-webkit-scrollbar-thumb {
     border-radius: 8px;
     border: none;
     overflow: hidden;
-    box-shadow: 0 6px 10px 0 rgba(var(--gray-1_rgb),.16);
-    -moz-box-shadow: 0 6px 10px 0 rgba(var(--gray-1_rgb),.16);
-    -webkit-box-shadow: 0 6px 10px 0 rgba(var(--gray-1_rgb),.16);
+    box-shadow: 0 6px 10px 0 rgba(var(--gray-1_rgb), 0.16);
+    -moz-box-shadow: 0 6px 10px 0 rgba(var(--gray-1_rgb), 0.16);
+    -webkit-box-shadow: 0 6px 10px 0 rgba(var(--gray-1_rgb), 0.16);
 }
 
 .card-item .card-title {
     margin-bottom: 0px;
+}
+
+.item-body {
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    overflow: hidden;
+    background-color: var(--white);
+    box-shadow: 0 6px 10px 0 rgba(var(--gray-1_rgb), 0.16);
+    -moz-box-shadow: 0 6px 10px 0 rgba(var(--gray-1_rgb), 0.16);
+    -webkit-box-shadow: 0 6px 10px 0 rgba(var(--gray-1_rgb), 0.16);
 }
 
 /* 

@@ -7,9 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class Categoria extends Model
 {
     protected $table = 'categoria';
+
     protected $fillable = [
-        'id', 'nombre',
-    ];
+        'id',
+        'nombre'];
 
     protected $hidden = [
         'created_at', 'updated_at',
