@@ -40,3 +40,10 @@ Route::get('submedida/{id}/delete',['as'=>'submedida.delete', 'uses'=>'API\Subme
 Route::post('submedida',['as'=>'submedida.store', 'uses'=>'API\SubmedidaController@store']);
 Route::patch('submedida/{id}',['as'=>'submedida.update', 'uses'=>'API\SubmedidaController@update']);
 Route::get('submedida/{id}/editar',['as'=>'submedida.editar', 'uses'=>'API\SubmedidaController@edit']);
+
+Route::get('plan',['as'=>'plan.index', 'uses'=>'Plan\PlanController@index']);
+Route::get('plan/create',['as'=>'plan.create', 'uses'=>'Plan\PlanController@create',]);
+Route::get('plan/{id}/delete',['as'=>'plan.delete', 'uses'=>'Plan\PlanController@delete']);
+Route::post('plan',['as'=>'plan.store', 'uses'=>'Plan\PlanController@store']);
+Route::patch('plan/{id}',['as'=>'plan.update', 'uses'=>'Plan\PlanController@update']);
+Route::get('plan/{id}/editar',['as'=>'plan.editar', 'uses'=>'Plan\PlanController@edit']);
