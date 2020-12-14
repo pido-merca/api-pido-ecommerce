@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\API;
+namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -9,21 +9,21 @@ use App\Models\Categoria;
 
 class CategoriaController extends Controller
 {
+    public function welcome(){
+        return view('welcome');
+    }
+    
     public function index(){
         $categorias=Categoria::paginate(10);
         return view('ProductosAdmon/Categoria.index' ,['categorias'=>$categorias]);
     }
   
-    public function create(){
-        //
-   }
-  
+   
     public function store(CategoriaRequest $request){
         $categorias = new Categoria;
-        $categorias->id = $request->input('id');
         $categorias->nombre = $request->input('nombre');
         $categorias->save();
-        return redirect()->route('categoria.index');
+        return redirect()->route('categoria.index')->with('success', 'Categoria creada correctamente');
     }
   
     public function edit($id){
@@ -36,7 +36,7 @@ class CategoriaController extends Controller
         $datos=array();
         $datos['nombre']=$request->input('nombre');
         $categoria->update($datos);
-        return redirect()->route('categoria.index');
+        return redirect()->route('categoria.index')->with('success-edit', 'Categoria actualizada correctamente');
     }
   
     public function delete($id){

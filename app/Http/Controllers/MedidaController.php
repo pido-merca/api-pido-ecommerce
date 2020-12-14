@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\API;
+namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -11,27 +11,16 @@ class MedidaController extends Controller
 {
     public function index(){
 
-        $medidas=Medida::all();
+        $medidas=Medida::paginate(10);
         return view('ProductosAdmon/Medida.index' ,['medidas'=>$medidas]);
     }
   
-    public function create(){
-        //
-   }
-  
-    /**
-       * Store a newly created resource in storage.
-       *
-       * @param  \Illuminate\Http\Request  $request
-       * @return \Illuminate\Http\Response
-       */
   
     public function store(MedidaRequest $request){
         $medidas = new Medida;
-        $medidas->id = $request->input('id');
         $medidas->nom_medida = $request->input('nom_medida');
         $medidas->save();
-        return redirect()->route('medida.index');
+        return redirect()->route('medida.index')->with('success', 'Medida creada correctamente');
     }
   
     public function edit($id){
@@ -39,12 +28,12 @@ class MedidaController extends Controller
         return view('ProductosAdmon/Medida.editar')->with('medida',$medida);
     }
   
-    public function update(Request $request,$id){
-        $medida=Medida::find($id);
+    public function update(Request $request){
+        $medida=Medida::find($request->id);
         $datos=array();
         $datos['nom_medida']=$request->input('nom_medida');
         $medida->update($datos);
-        return redirect()->route('medida.index');
+        return redirect()->route('medida.index')->with('success-edit', 'Medida actualizada correctamente');
     }
   
     public function delete($id){

@@ -7,7 +7,7 @@
 
 @section('contenido')
 
-<!-- Modal -->
+<!-- Modal-guardar -->
 <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="modal-label" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -22,11 +22,7 @@
         <form id="form" action="{{route('categoria.store')}}" method="POST">
           @csrf
           <div class="form-row">
-            <div class="form-group col-md-6">
-              <label>ID</label>
-              <input type="text" name="id" class="form-control" placeholder="ID de la Categoría" />
-            </div>
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-12">
               <label>Categoría</label>
               <input type="text" name="nombre" class="form-control" placeholder="Nombre de la categoria" />
             </div>
@@ -42,54 +38,52 @@
   </div>
 </div>
 
-<div id="modalEditCategoria" class="modal fade" tabindex="-1" aria-labelledby="modal-label" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <div class="modal-title">Editar categoria</div>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <!--form-->
-      <div class="modal-body">
-        <form class="form-horizontal" id="formcomida" name="formcomida" action="{{route('categoria.update') }}" method="POST">
-          @csrf
-          <input type="hidden" name="_method" value="PATCH" />
+<!--modal-edit-->
 
-          <input type="hidden" id="id" name="id" />
-          <div class="panel-heading"><br /><br /><br />
-            <h3 class="panel-title"><span class="fa  fa-cutlery"></span><b> Editar Categoria</b></h3>
-
+<div class="modal fade" id="modalEditCategoria" tabindex="-1" aria-labelledby="modal-label" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <a class="modal-title" id="modal-Label">Modificar Categoria</a>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
           </div>
-          <div class="panel-body">
-            <div class="row">
-              <div class="col-md-12">
-                <div class="form-group">
-                  <label class="col-md-2 control-label"> Nombre:</label>
-                  <div class="col-md-9">
-                    <div class="input-group">
-                      <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
-                      <input type="text" required id="nombre" name="nombre" class="form-control" placeholder="Nombre de la categoria" />
-                    </div>
-                  </div>
+          <!--form-->
+          <div class="modal-body">
+            <form class="form-horizontal" name="formcomida" id="form" action="{{route('categoria.update')}}" method="POST">
+            @csrf
+            <input type="hidden" name="_method" value="PATCH" />
+
+            <input type="hidden" id="id" name="id" />
+              <div class="form-row">
+                <div class="form-group col-md-12">
+                  <label>Editar Categoria</label>
+                  <input type="text" id="nombre" name="nombre" class="form-control"/>
                 </div>
               </div>
-            </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <button type="submit" class="btn btn-primary pull-right">Actualizar Categoria</button>
+             </div>
+            </form>
           </div>
-          <!--fin panel body-->
-
-          <div class="panel-footer">
-            <a href="{{route('categoria.index')}}" class="btn btn-default">Cancelar</a>
-            <button class="btn btn-info pull-right">Editar</button>
-          </div>
-
-        </form>
+         
+        </div>
       </div>
-
     </div>
-  </div>
+
+@if(session('success'))
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>{{session('success')}}</strong>
 </div>
+@endif
+
+@if(session('success-edit'))
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>{{session('success-edit')}}</strong>
+</div>
+@endif
 
 @if(count($errors)>0)
 <div class="alert alert-danger">
@@ -101,7 +95,12 @@
 </div>
 @endif
 
+<!--index-list-->
+
 <div class="item-body">
+  <div class="panel-heading">
+      <h2 class="panel-title">Categorias</h2>
+  </div>
   <table class="table text-center table-striped table-sm">
     <thead>
       <tr>
