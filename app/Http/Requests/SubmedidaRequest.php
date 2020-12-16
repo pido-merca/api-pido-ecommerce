@@ -25,7 +25,6 @@ class SubmedidaRequest extends FormRequest
     {
         return [
 
-            'id'=>'required|numeric|min:1',
             'nom_submedida' => 'required|min:3|max:20'
             
         ];
@@ -34,7 +33,6 @@ class SubmedidaRequest extends FormRequest
     public function attributes()
     {
       return [
-              'id' => 'ID',
               'nom_submedida'=>'Submedida'
              ];
           }
@@ -42,9 +40,6 @@ class SubmedidaRequest extends FormRequest
           public function messages()
     {
       return [
-              'id.required'=>'El :attribute es necesaria',
-              'id.numeric'=>'El :attribute debe ser sólo números',
-              'id.min'=>'El :attribute no puede tener menos de 1 caracteres',
               'nom_submedida.required'=>'El :attribute es necesario',
               'nom_submedida.min'=>'El :attribute no puede tener menos de 4 caracteres',
               'nom_submedida.max'=>'El :attribute tiene más de 20 caracteres',

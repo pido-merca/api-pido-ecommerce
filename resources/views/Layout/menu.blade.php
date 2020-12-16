@@ -9,7 +9,8 @@
             <i class="fas fa-building"></i><span>Modulo Aliados</span>
         </div>
         <div class="col-12">
-            <i class="fab fa-product-hunt"></i><span>Modulo Productos Admon</span>
+            <i class="fab fa-product-hunt"></i>
+            <span><a href="{{route('welcome.welcome')}}">Modulo Productos Admon</a></span>
         </div>
         <div class="col-12">
             <i class="fas fa-store"></i><span>Modulo Productos Aliados</span>
