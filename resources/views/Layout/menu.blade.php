@@ -6,7 +6,7 @@
     </div>
     <div class="row options">
         <div class="col-12">
-            <a href="{{route('plan.index')}}"><i class="fas fa-building"></i><span>Modulo Aliados</span></a>
+            <a href="{{route('aliado.index')}}"><i class="fas fa-building"></i><span>Modulo Aliados</span></a>
         </div>
         <div class="col-12">
             <i class="fab fa-product-hunt"></i><span>Modulo Productos Admon</span>
