@@ -9,9 +9,6 @@ use App\Models\Categoria;
 
 class CategoriaController extends Controller
 {
-    public function welcome(){
-        return view('welcome');
-    }
     
     public function index(){
         $categorias=Categoria::paginate(10);

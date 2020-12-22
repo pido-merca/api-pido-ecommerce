@@ -16,8 +16,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('welcome',['as'=>'welcome.welcome', 'uses'=>'CategoriaController@welcome']);
-
 Route::get('categoria',['as'=>'categoria.index', 'uses'=>'CategoriaController@index']);
 Route::get('categoria/{id}/delete',['as'=>'categoria.delete', 'uses'=>'CategoriaController@delete']);
 Route::post('categoria',['as'=>'categoria.store', 'uses'=>'CategoriaController@store']);
@@ -41,3 +39,9 @@ Route::get('submedida/{id}/delete',['as'=>'submedida.delete', 'uses'=>'Submedida
 Route::post('submedida',['as'=>'submedida.store', 'uses'=>'SubmedidaController@store']);
 Route::patch('submedida',['as'=>'submedida.update', 'uses'=>'SubmedidaController@update']);
 Route::get('submedida/{id}/editar',['as'=>'submedida.editar', 'uses'=>'SubmedidaController@edit']);
+
+Route::get('productoadmon',['as'=>'productoadmon.index', 'uses'=>'ProductoAdmonController@index']);
+Route::get('productoadmon/{id}/delete',['as'=>'productoadmon.delete', 'uses'=>'ProductoAdmonController@delete']);
+Route::post('productoadmon',['as'=>'productoadmon.store', 'uses'=>'ProductoAdmonController@store']);
+Route::patch('productoadmon',['as'=>'productoadmon.update', 'uses'=>'ProductoAdmonController@update']);
+Route::get('productoadmon/{id}/editar',['as'=>'productoadmon.editar', 'uses'=>'ProductoAdmonController@edit']);

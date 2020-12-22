@@ -10,7 +10,7 @@
         </div>
         <div class="col-12">
             <i class="fab fa-product-hunt"></i>
-            <span><a href="{{route('welcome.welcome')}}">Modulo Productos Admon</a></span>
+            <span><a href="{{route('productoadmon.index')}}">Modulo Productos Admon</a></span>
         </div>
         <div class="col-12">
             <i class="fas fa-store"></i><span>Modulo Productos Aliados</span>

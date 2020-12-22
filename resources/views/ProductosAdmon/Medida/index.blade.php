@@ -104,7 +104,7 @@
                     <thead>
                         <tr>
                             <th class="text-center">ID</th>
-                            <th class="text-center">Nombre de la medida</th>
+                            <th class="text-center">Valor de la medida</th>
                             <th><a class="btn btn-success btn-sm" data-toggle="modal" data-target="#modal"> Agregar Nueva Medida</a></th>
                         </tr>
                     </thead>
