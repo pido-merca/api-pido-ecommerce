@@ -39,13 +39,16 @@ class AliadoController extends Controller
         
 }
 
-    public function getImageAvatar($filename){
-      $isset = \Storage::disk('aliados')->exists($filename);
-      if($isset){
-        $file = \Storage::disk('aliados')->get($filename);
-            return new Response($file,200);
-      }
-      return response()->json($data, $data['code']);
+     public function getImageAvatar($filename)
+    {
+        $isset = \Storage::disk('aliados')->exists($filename);
+
+        if ($isset) {
+            $file = \Storage::disk('aliados')->get($filename);
+            return new Response($file, 200);
+        }
+
+        return response()->json(['status' => 404]);
 
     }
 
@@ -99,9 +102,14 @@ class AliadoController extends Controller
       $datos['correo']=$request->input('correo');
       $datos['fecha_inscripcion']=$request->input('fecha_inscripcion');
       $datos['cod_plan']=$request->input('cod_plan');
-      $datos['imagen']=$request->input('imagen');
+      if($request->hasFile('avatar'))
+      {
+       Storage::disk('aliados')->delete($aliados->imagen);
+       $image = $request->file('avatar');
+       $name = $this->storageImage($image);
+       $aliados->imagen = $name;
+      }
       $datos['estado']=$request->input('estado');
-
       $aliados->update($datos);
       return redirect()->route('aliado.index')->with('edit','Subcategoría actualizada correctamente');
     }

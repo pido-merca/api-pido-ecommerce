@@ -154,7 +154,7 @@
 
       <div class="modal-body">
       
-        <form class="form-horizontal" id="formcomida" name="formcomida" action="{{ route('aliado.update') }}" method="POST">
+        <form class="form-horizontal" enctype="multipart/form-data" id="formcomida" name="formcomida" action="{{ route('aliado.update') }}" method="POST">
           @csrf
           <input type="hidden" name="_method" value="PATCH" />
 
@@ -255,9 +255,11 @@
     
 
            <div class="form-row">
-            <div class="form-group col-md-12">
-              <label>Imagen</label>
-              <input type="file" id="file0" name="imagen" class="form-control"/>
+           <div class="form-group col-md-12">
+              <div>
+                <label for="name" class="form-label">Imagen</label>
+                <input class="form-control  form-control-lg" type="file" id="avatar" name="avatar" accept="image/*">
+              </div>
             </div>
 
              <div class="form-group col-md-6">
