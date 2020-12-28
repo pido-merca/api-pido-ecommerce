@@ -18,7 +18,7 @@ class PlanController extends Controller
       return view('Aliados.Plan.index',['planes'=>$planes]);
     }
 
-    public function store(Request $request)
+    public function store(PlanRequest $request)
     {
       $plan = new Plan;
       $plan->nombre = $request->input('nombre');
@@ -37,7 +37,7 @@ class PlanController extends Controller
       return view('Aliados.Plan.editar')->with('plan',$plan);
     }
 
-    public function update(Request $request)
+    public function update(PlanRequest $request)
     {
       $plan = Plan::find($request->id);
       $datos = array();

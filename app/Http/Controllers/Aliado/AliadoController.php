@@ -5,20 +5,24 @@ namespace App\Http\Controllers\Aliado;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Requests\AliadoRequest;
+
 use Illuminate\Http\Response;
 use App\Models\Aliado;
 use App\Models\Municipio;
 use App\Models\Plan;
+use App\Models\Subcategoria;
 
 
 class AliadoController extends Controller
 {
     public function index()
     {
+      $subcategorias = Subcategoria::all();
       $municipios = Municipio::all();
       $planes = Plan::all();
       $aliados=Aliado::paginate(10);
-      return view('Aliados.Aliado.index',compact('aliados','municipios','planes'));
+      return view('Aliados.Aliado.index',compact('aliados','municipios','planes','subcategorias'));
     }
 
     public function create()
@@ -52,8 +56,10 @@ class AliadoController extends Controller
 
     }
 
-    public function store(Request $request)
+    public function store(AliadoRequest $request)
     {
+      $subcategorias = Subcategoria::all();
+      $subcategorias->id = $request->input('id');
       $aliados = new Aliado;
       $aliados->nombre = $request->input('nombre');
       $aliados->slug = $request->input('slug');
@@ -70,8 +76,8 @@ class AliadoController extends Controller
       $name = $this->storageImage($image);
       $aliados->imagen = $name;
       $aliados->estado = $request->input('estado');
-
       $aliados->save();
+      $aliados->subcategorias()->attach($request->id, ['estado' => true]);
       return redirect()->route('aliado.index')->with('success','Aliado creado correctamente');
     }
 
@@ -86,7 +92,7 @@ class AliadoController extends Controller
       return view('Aliados.Aliado.editar')->with('aliados', $aliados);
     }
 
-    public function update(Request $request)
+    public function update(AliadoRequest $request)
     {
       $aliados = Aliado::find($request->id);
       $datos = array();

@@ -23,12 +23,23 @@
           @csrf
 
           <div class="form-row">
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-4">
               <label>Nombre del Aliado</label>
               <input type="text" name="nombre" class="form-control" placeholder="Nombre del aliado" />
             </div>
 
-            <div class="form-group col-md-6">
+                      
+              <div class="form-group col-md-4">
+              <label>Subcategoria</label>
+                  <select id="id" name="id" class="form-control ">
+                    @foreach($subcategorias as $subcategoria)
+                    <option value="{{ $subcategoria->id }}" selected> {{ $subcategoria->nombre_subcategoria }} </option>
+                    @endforeach
+                  </select>
+            </div>
+           
+
+            <div class="form-group col-md-4">
               <label>Slug</label>
               <input type="text" name="slug" class="form-control" placeholder="slug" />
             </div>
@@ -165,19 +176,16 @@
           </div>
           <div class="panel-body">
             <div class="form-row">
-            <div class="form-group col-md-6">
-              <label>Nombre del Aliado</label>
-              <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Nombre del aliado" />
-            </div>
+              <div class="form-group col-md-6">
+                <label>Nombre del Aliado</label>
+                <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Nombre del aliado" />
+              </div>
 
-            <div class="form-group col-md-6">
-              <label>Slug</label>
-              <input type="text" id="slug" name="slug" class="form-control" placeholder="slug" />
+              <div class="form-group col-md-6">
+                <label>Slug</label>
+                <input type="text" id="slug" name="slug" class="form-control" placeholder="slug" />
+              </div>
             </div>
-
-            
-          </div>
-         
 
            <div class="form-row text-center">
             <div class="form-group col-md-4">
@@ -341,9 +349,11 @@
         <td>{{$aliado->telefono}}</td>
         <td>{{$aliado->correo}}</td>
         <td>
+        
           <div class="card w-100 h-100">
-            <img class="rounded mx-auto d-block img-fluid" src="{{ asset ('/storage/aliados/'. $aliado->imagen)}}" alt="img1">
+            <img class="rounded mx-auto d-block img-fluid" src="{{ url('/aliado', $aliado->imagen)}}">
           </div>
+        
         </td>
         <td>{{$aliado->fecha_inscripcion}}</td>
         

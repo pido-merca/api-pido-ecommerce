@@ -25,8 +25,8 @@
             <div class="form-group col-md-6">
               <label>Categoría</label>
                   <select id="cod_categoria" name="cod_categoria" class="form-control ">
-                    @foreach($subcategorias as $subcategoria)
-                    <option value="{{ $subcategoria->cod_categoria }}" selected> {{ $subcategoria->categoriaAliado->nombre }} </option>
+                    @foreach($categorias_aliado as $categoria_aliado)
+                    <option value="{{ $categoria_aliado->id }}" selected> {{ $categoria_aliado->nombre }} </option>
                     @endforeach
                   </select>
             </div>
@@ -92,8 +92,6 @@
           </div>
           <div class="panel-body">
             <div class="row">
-
-
               <div class="col-md-12">
                 <div class="form-group">
                   <label class="col-md-12 control-label"> Categoría:</label>
@@ -122,7 +120,7 @@
               <div class="col-md-12">
                 <div class="form-group col-md-9">
                   <label>Slug</label>
-                  <input type="text" id="slug" name="slug" class="form-control" placeholder="Slug" value="{{ $subcategoria->slug }}" />
+                  <input type="text" id="slug" name="slug" class="form-control" placeholder="Slug"/>
                 </div>
               </div>
 

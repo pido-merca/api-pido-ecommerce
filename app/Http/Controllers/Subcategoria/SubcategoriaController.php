@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Subcategoria;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Requests\SubcategoriaRequest;
 use App\Models\Subcategoria;
 use App\Models\CategoriaAliado;
 use App\Models\Submedida;
@@ -23,7 +24,7 @@ class SubcategoriaController extends Controller
         //
     }
 
-    public function store(Request $request)
+    public function store(SubcategoriaRequest $request)
     {
       $subcategorias = new Subcategoria;
       $subcategorias->cod_categoria = $request->input('cod_categoria');
@@ -45,7 +46,7 @@ class SubcategoriaController extends Controller
       return view('Aliados.Subcategoria.editar')->with('subcategorias',$subcategorias)->with('categorias_aliado',$categorias_aliado);
     }
 
-    public function update(Request $request)
+    public function update(SubcategoriaRequest $request)
     {
       $subcategorias = Subcategoria::find($request->id);
       $datos = array();

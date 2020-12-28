@@ -4,6 +4,7 @@ namespace App\Http\Controllers\CategoriaAliado;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Requests\CategoriaAliadoRequest;
 use App\Models\CategoriaAliado;
 class CategoriaAliadoController extends Controller
 {
@@ -18,7 +19,7 @@ class CategoriaAliadoController extends Controller
         //
     }
 
-    public function store(Request $request)
+    public function store(CategoriaAliadoRequest $request)
     {
       $categorias_aliado = new CategoriaAliado;
       $categorias_aliado->nombre = $request->input('nombre');
@@ -37,7 +38,7 @@ class CategoriaAliadoController extends Controller
       return view('Aliados.CategoriaAliado.editar')->with('categorias_aliado',$categorias_aliado);
     }
 
-    public function update(Request $request)
+    public function update(CategoriaAliadoRequest $request)
     {
       $categorias_aliado = CategoriaAliado::find($request->id);
       $datos = array();

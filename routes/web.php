@@ -74,6 +74,16 @@ Route::get('/aliado/{id}/delete',['as'=>'aliado.delete', 'uses'=>'Aliado\AliadoC
 Route::post('/aliado',['as'=>'aliado.store', 'uses'=>'Aliado\AliadoController@store']);
 Route::patch('/aliado',['as'=>'aliado.update', 'uses'=>'Aliado\AliadoController@update']);
 Route::get('/aliado/{id}/editar',['as'=>'aliado.editar', 'uses'=>'Aliado\AliadoController@edit']);
+Route::get('/aliado/{filename}',['uses'=>'Aliado\AliadoController@getImageAvatar']);
+
+//Rutas de Aliados | Subcategorias
+Route::get('/aliadosubcategoria',['as'=>'aliadosubcategoria.index', 'uses'=>'AliadoSubcategoria\AliadoSubcategoriaController@index']);
+Route::get('/aliadosubcategoria/create',['as'=>'aliadosubcategoria.create', 'uses'=>'AliadoSubcategoria\AliadoSubcategoriaController@create',]);
+Route::get('/aliadosubcategoria/{id}/delete',['as'=>'aliadosubcategoria.delete', 'uses'=>'AliadoSubcategoria\AliadoSubcategoriaController@delete']);
+Route::post('/aliadosubcategoria',['as'=>'aliadosubcategoria.store', 'uses'=>'AliadoSubcategoria\AliadoSubcategoriaController@store']);
+Route::patch('/aliadosubcategoria',['as'=>'aliadosubcategoria.update', 'uses'=>'AliadoSubcategoria\AliadoSubcategoriaController@update']);
+Route::get('/aliadosubcategoria/{id}/editar',['as'=>'aliadosubcategoria.editar', 'uses'=>'AliadoSubcategoria\AliadoSubcategoriaController@edit']);
+Route::get('/prueba',['uses'=>'AliadoSubcategoria\AliadoSubcategoriaController@store']);
 
 
 
