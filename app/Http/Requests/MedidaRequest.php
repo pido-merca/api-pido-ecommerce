@@ -25,7 +25,7 @@ class MedidaRequest extends FormRequest
     {
         return [
 
-            'nom_medida' => 'required|min:3|max:20'
+            'nom_medida' => 'required|min:4|max:20'
             
         ];
     }

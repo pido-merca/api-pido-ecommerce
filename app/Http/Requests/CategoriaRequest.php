@@ -25,7 +25,7 @@ class CategoriaRequest extends FormRequest
     {
         return [
 
-            'nombre' => 'required|min:3|max:20'
+            'nombre' => 'required|min:4|max:20'
             
         ];
     }

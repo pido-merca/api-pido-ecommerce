@@ -28,7 +28,7 @@ class MarcaController extends Controller
         return view('ProductosAdmon/Marca.editar')->with('marca',$marca);
     }
   
-    public function update(Request $request){
+    public function update(MarcaRequest $request){
         $marca=Marca::find($request->id);
         $datos=array();
         $datos['nombre']=$request->input('nombre');

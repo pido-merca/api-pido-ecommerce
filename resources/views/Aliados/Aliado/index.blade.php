@@ -7,7 +7,7 @@
 
 @section('contenido')
 
-<!-- Modal -->
+<!-- Modal-create -->
 <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="modal-label" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -140,7 +140,7 @@
   </div>
 </div>
 
-
+<!-- Modal-edit -->
 <div id="modalEditAliado" class="modal fade" tabindex="-1" aria-labelledby="modal-label" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -289,13 +289,13 @@
 
 
 @if (session('success'))
-<div class="alert alert-success role="alert">
+<div class="alert alert-success" role="alert">
 <strong>{{ session('success')}}</strong> 
 </div>
 @endif
 
 @if (session('edit'))
-<div class="alert alert-info role="alert">
+<div class="alert alert-info" role="alert">
 <strong>{{ session('edit')}}</strong> 
 </div>
 @endif
@@ -310,6 +310,7 @@
 </div>
 @endif
 
+<!-- index-list-->
 <div class="item-body">
   <table class="table text-center table-striped ">
     <thead>
@@ -364,7 +365,6 @@
           data-correo="{{$aliado->correo}}" 
           data-fecha_inscripcion="{{$aliado->fecha_inscripcion}}" 
           data-cod_plan="{{$aliado->plan->id}}" 
-          data-imagen="{{$aliado->imagen}}" 
           data-estado="{{$aliado->estado}}" 
           class="btn btn-primary btn-sm">
           Editar</a>

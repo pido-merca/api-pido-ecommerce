@@ -46,6 +46,17 @@ Route::get('productoadmon/{id}/delete',['as'=>'productoadmon.delete', 'uses'=>'P
 Route::post('productoadmon',['as'=>'productoadmon.store', 'uses'=>'ProductoAdmonController@store']);
 Route::patch('productoadmon',['as'=>'productoadmon.update', 'uses'=>'ProductoAdmonController@update']);
 Route::get('productoadmon/{id}/editar',['as'=>'productoadmon.editar', 'uses'=>'ProductoAdmonController@edit']);
+Route::get('/productoadmon/{filename}',['uses' => 'ProductoAdmonController@getImageProducto']);
+
+
+
+Route::get('productoaliado',['as'=>'productoaliado.index', 'uses'=>'ProductoAliadoController@index']);
+Route::get('productoaliado/{id}/delete',['as'=>'productoaliado.delete', 'uses'=>'ProductoAliadoController@delete']);
+Route::post('productoaliado',['as'=>'productoaliado.store', 'uses'=>'ProductoAliadoController@store']);
+Route::patch('productoaliado',['as'=>'productoaliado.update', 'uses'=>'ProductoAliadoController@update']);
+Route::get('productoaliado/{id}/editar',['as'=>'productoaliado.editar', 'uses'=>'ProductoAliadoController@edit']);
+
+
 
 
 
@@ -81,9 +92,7 @@ Route::get('/aliado/{id}/delete',['as'=>'aliado.delete', 'uses'=>'Aliado\AliadoC
 Route::post('/aliado',['as'=>'aliado.store', 'uses'=>'Aliado\AliadoController@store']);
 Route::patch('/aliado',['as'=>'aliado.update', 'uses'=>'Aliado\AliadoController@update']);
 Route::get('/aliado/{id}/editar',['as'=>'aliado.editar', 'uses'=>'Aliado\AliadoController@edit']);
-
-Route::get('/aliado/{filename}',['Aliado\AliadoController@getImageAvatar']);
-
+Route::get('/aliado/{filename}',['uses' => 'Aliado\AliadoController@getImageAvatar']);
 
 
 

@@ -24,7 +24,7 @@ class ProductoAliado extends Model
 
     public function aliado()
     {
-        return $this->belongsTo('App\Models\Aliado','cod_aliado');
+        return $this->belongsTo('App\Models\Aliado','id_aliado');
     }
 
     public function productoAdmon()

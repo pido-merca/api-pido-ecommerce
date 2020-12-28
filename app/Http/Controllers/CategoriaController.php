@@ -28,7 +28,7 @@ class CategoriaController extends Controller
         return view('ProductosAdmon/Categoria.editar')->with('categoria',$categoria);
     }
   
-    public function update(Request $request){
+    public function update(CategoriaRequest $request){
         $categoria=Categoria::find($request->id);
         $datos=array();
         $datos['nombre']=$request->input('nombre');

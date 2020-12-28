@@ -31,7 +31,7 @@ class SubmedidaController extends Controller
         return view('ProductosAdmon/Submedida.editar')->with('submedida',$submedida);
     }
   
-    public function update(Request $request){
+    public function update(SubmedidaRequest $request){
         $submedida=Submedida::find($request->id);
         $datos=array();
         $datos['cod_medida']=$request->input('cod_medida');
