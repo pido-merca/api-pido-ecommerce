@@ -7,7 +7,7 @@
 
 @section('contenido')
 
-<!-- Modal -->
+<!-- Modal-create -->
 <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="modal-label" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -126,7 +126,7 @@
               </div>
             </div>
 
-             <div class="form-group col-md-6">
+             <div class="form-group col-md-12">
               <label>Estado</label>
                   <select id="estado" name="estado" class="form-control ">
                     <option value="0" selected> Activo </option>
@@ -151,7 +151,7 @@
   </div>
 </div>
 
-
+<!-- Modal-edit -->
 <div id="modalEditAliado" class="modal fade" tabindex="-1" aria-labelledby="modal-label" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -222,10 +222,6 @@
             </div>
           </div>
 
-          
-            
-         
-
           <div class="form-row">
             <div class="form-group col-md-6">
               <label>Teléfono</label>
@@ -237,10 +233,6 @@
               <input type="email" id="correo" name="correo" class="form-control" placeholder="Email" />
             </div>
           </div>
-
-         
-            
-      
 
           <div class="form-row">
             <div class="form-group col-md-6">
@@ -258,19 +250,15 @@
             </div>
           </div>
 
-           
-            
-    
-
            <div class="form-row">
-           <div class="form-group col-md-12">
+           <div class="form-group col-md-6">
               <div>
                 <label for="name" class="form-label">Imagen</label>
                 <input class="form-control  form-control-lg" type="file" id="avatar" name="avatar" accept="image/*">
               </div>
             </div>
 
-             <div class="form-group col-md-6">
+             <div class="form-group col-md-12">
               <label>Estado</label>
                   <select id="estado" name="estado" class="form-control ">
                     <option value="0" selected> Activo </option>
@@ -297,13 +285,13 @@
 
 
 @if (session('success'))
-<div class="alert alert-success role="alert">
+<div class="alert alert-success" role="alert">
 <strong>{{ session('success')}}</strong> 
 </div>
 @endif
 
 @if (session('edit'))
-<div class="alert alert-info role="alert">
+<div class="alert alert-info" role="alert">
 <strong>{{ session('edit')}}</strong> 
 </div>
 @endif
@@ -318,6 +306,7 @@
 </div>
 @endif
 
+<!-- index-list-->
 <div class="item-body">
   <table class="table text-center table-striped ">
     <thead>
@@ -374,7 +363,6 @@
           data-correo="{{$aliado->correo}}" 
           data-fecha_inscripcion="{{$aliado->fecha_inscripcion}}" 
           data-cod_plan="{{$aliado->plan->id}}" 
-          data-imagen="{{$aliado->imagen}}" 
           data-estado="{{$aliado->estado}}" 
           class="btn btn-primary btn-sm">
           Editar</a>

@@ -8,7 +8,7 @@ class Submedida extends Model
 {
     protected $table = 'submedida';
     protected $fillable = [
-        'cod_medida', 'nom_submedida',
+       'id', 'cod_medida', 'nom_submedida',
     ];
 
     protected $hidden = [
@@ -22,6 +22,7 @@ class Submedida extends Model
 
     public function medida()
     {
-        return $this->belognsTo('App\Models\Medida');
+        return $this->belongsTo('App\Models\Medida', 'cod_medida');
     }
+
 }

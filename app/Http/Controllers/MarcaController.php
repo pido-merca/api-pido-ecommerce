@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\API;
+namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -11,27 +11,16 @@ class MarcaController extends Controller
 {
     public function index(){
 
-        $marcas=Marca::all();
+        $marcas=Marca::paginate(10);
         return view('ProductosAdmon/Marca.index' ,['marcas'=>$marcas]);
     }
   
-    public function create(){
-        //
-   }
-  
-    /**
-       * Store a newly created resource in storage.
-       *
-       * @param  \Illuminate\Http\Request  $request
-       * @return \Illuminate\Http\Response
-       */
   
     public function store(MarcaRequest $request){
         $marcas = new Marca;
-        $marcas->id = $request->input('id');
         $marcas->nombre = $request->input('nombre');
         $marcas->save();
-        return redirect()->route('marca.index');
+        return redirect()->route('marca.index')->with('success', 'Marca creada correctamente');
     }
   
     public function edit($id){
@@ -39,12 +28,12 @@ class MarcaController extends Controller
         return view('ProductosAdmon/Marca.editar')->with('marca',$marca);
     }
   
-    public function update(Request $request,$id){
-        $marca=Marca::find($id);
+    public function update(MarcaRequest $request){
+        $marca=Marca::find($request->id);
         $datos=array();
         $datos['nombre']=$request->input('nombre');
         $marca->update($datos);
-        return redirect()->route('marca.index');
+        return redirect()->route('marca.index')->with('success-edit', 'Marca actualizada correctamente');
     }
   
     public function delete($id){

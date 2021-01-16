@@ -33,7 +33,7 @@
           </div>
           <div class="panel-body">
            <div class="form-row">
-            <div class="form-group col-md-9">
+            <div class="form-group col-md-12">
             <label for="cod_aliado">Aliado</label>
                     <select id="cod_aliado" name="cod_aliado" class="form-control ">
                       @foreach($aliados_subcategorias as $aliado_subcategoria)
@@ -44,7 +44,7 @@
            </div>
 
             <div class="form-row">
-              <div class="form-group col-md-9">
+              <div class="form-group col-md-12">
               <label for="cod_subcategoria">Subcategoria</label>
                       <select id="cod_subcategoria" name="cod_subcategoria" class="form-control ">
                         @foreach($subcategorias as $subcategoria)
@@ -54,7 +54,7 @@
               </div>
             </div>
             <div class="form-row">
-                    <div class="form-group col-md-6">
+                    <div class="form-group col-md-12">
                       <label>Estado</label>
                       <select id="estado" name="estado" class="form-control ">
                         <option value="0" selected> Activo </option>

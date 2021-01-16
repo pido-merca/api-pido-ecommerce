@@ -9,10 +9,11 @@
             <a href="{{route('aliado.index')}}"><i class="fas fa-building"></i><span>Modulo Aliados</span></a>
         </div>
         <div class="col-12">
-            <i class="fab fa-product-hunt"></i><span>Modulo Productos Admon</span>
+            
+            <a href="{{route('productoadmon.index')}}"><i class="fab fa-product-hunt"></i><span>Modulo Productos Admon</span></a>
         </div>
         <div class="col-12">
-            <i class="fas fa-store"></i><span>Modulo Productos Aliados</span>
+        <a href="{{route('productoaliado.index')}}"><i class="fab fa-product-hunt"></i><span>Modulo Productos Aliados</span></a>
         </div>
     </div>
 </div>

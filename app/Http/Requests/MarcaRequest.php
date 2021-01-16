@@ -26,8 +26,7 @@ class MarcaRequest extends FormRequest
     {
         return [
 
-            'id'=>'required|numeric|min:1',
-            'nombre' => 'required|min:3|max:20'
+            'nombre' => 'required|min:4|max:20'
             
         ];
     }
@@ -35,7 +34,6 @@ class MarcaRequest extends FormRequest
     public function attributes()
     {
       return [
-              'id' => 'ID',
               'nombre'=>'Nombre'
              ];
           }
@@ -43,9 +41,6 @@ class MarcaRequest extends FormRequest
           public function messages()
     {
       return [
-              'id.required'=>'El :attribute es necesaria',
-              'id.numeric'=>'El :attribute debe ser sólo números',
-              'id.min'=>'El :attribute no puede tener menos de 1 caracteres',
               'nombre.required'=>'El :attribute es necesario',
               'nombre.min'=>'El :attribute no puede tener menos de 4 caracteres',
               'nombre.max'=>'El :attribute tiene más de 20 caracteres',

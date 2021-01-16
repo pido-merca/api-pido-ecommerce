@@ -106,7 +106,7 @@ a{
 
 .card-item {
     cursor: pointer;
-    border-radius: 8px;
+    border-radius: 10px;
     border: none;
     overflow: hidden;
     box-shadow: 0 6px 10px 0 rgba(var(--gray-1_rgb), 0.16);

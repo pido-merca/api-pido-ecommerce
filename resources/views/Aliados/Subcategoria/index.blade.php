@@ -22,7 +22,7 @@
         <form id="form" action="{{route('subcategoria.store')}}" method="POST">
           @csrf
           <div class="form-row">
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-12">
               <label>Categoría</label>
                   <select id="cod_categoria" name="cod_categoria" class="form-control ">
                     @foreach($categorias_aliado as $categoria_aliado)
@@ -33,21 +33,21 @@
           </div>
 
           <div class="form-row">
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-12">
               <label>Nombre Subcategoría</label>
               <input type="text" name="nombre_subcategoria" class="form-control" placeholder="Nombre de la Subcategoría" />
             </div>
           </div>
 
           <div class="form-row">
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-12">
               <label>Slug</label>
               <input type="text" name="slug" class="form-control" placeholder="Slug" />
             </div>
           </div>
 
           <div class="form-row">
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-12">
               <label>Estado</label>
                   <select id="estado" name="estado" class="form-control ">
                     <option value="0" selected> Activo </option>
@@ -95,7 +95,7 @@
               <div class="col-md-12">
                 <div class="form-group">
                   <label class="col-md-12 control-label"> Categoría:</label>
-                  <div class="form-group col-md-9">
+                  <div class="form-group col-md-12">
                     <select id="cod_categoria" name="cod_categoria" class="form-control ">
                       @foreach($categorias_aliado as $categoria_aliado)
                         <option value="{{ $categoria_aliado->id }}" selected> {{ $categoria_aliado->nombre }} </option>
@@ -108,7 +108,7 @@
               <div class="col-md-12">
                 <div class="form-group">
                   <label class="col-md-12 control-label"> Nombre Subcategoría:</label>
-                  <div class="col-md-9">
+                  <div class="col-md-12">
                     <div class="input-group">
                       <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
                       <input type="text" required id="nombre_subcategoria" name="nombre_subcategoria" class="form-control" placeholder="Nombre de la Subcategoría" />
@@ -118,14 +118,14 @@
               </div>  
 
               <div class="col-md-12">
-                <div class="form-group col-md-9">
+                <div class="form-group col-md-12">
                   <label>Slug</label>
                   <input type="text" id="slug" name="slug" class="form-control" placeholder="Slug"/>
                 </div>
               </div>
 
               <div class="col-md-12">
-                <div class="form-group col-md-9">
+                <div class="form-group col-md-12">
                   <label>Estado</label>
                   <select id="estado" name="estado" class="form-control ">
                     <option value="0" selected> Activo </option>

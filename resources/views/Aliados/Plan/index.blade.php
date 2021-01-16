@@ -22,7 +22,7 @@
         <form id="form" action="{{route('plan.store')}}" method="POST">
           @csrf
           <div class="form-row">
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-12">
               <label>Plan</label>
               <input type="text" name="nombre" class="form-control" placeholder="Nombre del plan" />
             </div>
@@ -66,7 +66,7 @@
               <div class="col-md-12">
                 <div class="form-group">
                   <label class="col-md-2 control-label"> Nombre:</label>
-                  <div class="col-md-9">
+                  <div class="col-md-12">
                     <div class="input-group">
                       <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
                       <input type="text" required id="nombre" name="nombre" class="form-control" placeholder="Nombre del plan" />
