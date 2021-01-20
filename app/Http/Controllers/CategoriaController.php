@@ -9,9 +9,6 @@ use App\Models\Categoria;
 
 class CategoriaController extends Controller
 {
-    public function welcome(){
-        return view('welcome');
-    }
     
     public function index(){
         $categorias=Categoria::paginate(10);
@@ -31,7 +28,7 @@ class CategoriaController extends Controller
         return view('ProductosAdmon/Categoria.editar')->with('categoria',$categoria);
     }
   
-    public function update(Request $request){
+    public function update(CategoriaRequest $request){
         $categoria=Categoria::find($request->id);
         $datos=array();
         $datos['nombre']=$request->input('nombre');

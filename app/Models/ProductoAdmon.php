@@ -20,6 +20,7 @@ class ProductoAdmon extends Model
     {
         return $this->belongsTo('App\Models\Marca','cod_marca');
     }
+    
 
     public function categoria()
     {

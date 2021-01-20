@@ -28,7 +28,7 @@ class MedidaController extends Controller
         return view('ProductosAdmon/Medida.editar')->with('medida',$medida);
     }
   
-    public function update(Request $request){
+    public function update(MedidaRequest $request){
         $medida=Medida::find($request->id);
         $datos=array();
         $datos['nom_medida']=$request->input('nom_medida');

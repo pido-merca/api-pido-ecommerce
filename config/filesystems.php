@@ -55,9 +55,17 @@ return [
             'visibility' => 'public',
         ],
 
+        'imgproductos' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/imgproductos'),
+            'url' => env('APP_URL').'/storage',
+            'visibility' => 'public',
+        ],
+
+
         'aliados' => [
             'driver' => 'local',
-            'root' => storage_path('app/aliados'),
+            'root' => storage_path('app/public/aliados'),
             'url' => env('APP_URL') . '/storage',
             'visibility' => 'public',
         ],

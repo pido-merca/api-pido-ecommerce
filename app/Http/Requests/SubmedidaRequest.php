@@ -25,7 +25,7 @@ class SubmedidaRequest extends FormRequest
     {
         return [
 
-            'nom_submedida' => 'required|min:3|max:20'
+            'nom_submedida' => 'required|min:4|max:20'
             
         ];
     }

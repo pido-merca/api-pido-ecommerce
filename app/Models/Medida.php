@@ -8,7 +8,7 @@ class Medida extends Model
 {
     protected $table = 'medida';
     protected $fillable = [
-        'nom_medida'
+        'id', 'nom_medida'
     ];
 
     protected $hidden = [
