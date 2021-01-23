@@ -26,6 +26,7 @@ class CreateAliadoTable extends Migration
             $table->string('correo', 50);
             $table->date('fecha_inscripcion');
             $table->string('imagen', 250);
+            $table->string('banner', 250);
             $table->string('hora_inicio');
             $table->string('hora_cierre');
             $table->integer('estado');

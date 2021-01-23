@@ -10,8 +10,8 @@ class AliadoSeeder extends Seeder
     {
         Aliado::create([
             'id' => '1',
-            'nombre' => 'Depositos Los Dukes',
-            'slug' => 'depositos-los-dukes',
+            'nombre' => 'Campo y Mar',
+            'slug' => 'campo-y-mar',
             'hora_inicio' => '5:00 AM',
             'hora_cierre' => '5:00 PM',
             'camara_comercio' => 'Registrado',
@@ -21,7 +21,8 @@ class AliadoSeeder extends Seeder
             'correo' => 'prueba@gmail.com',
             'fecha_inscripcion' => '2020-11-29 08:13:40',
             'cod_plan' => '2',
-            'imagen' => "pexels-pixabay-264636.jpg",
+            'imagen' => "user.jpg",
+            'banner' => "banner.jpg",
             'estado' => '1',
         ]);
 
@@ -39,6 +40,7 @@ class AliadoSeeder extends Seeder
             'fecha_inscripcion' => '2020-11-29 08:13:40',
             'cod_plan' => '2',
             'imagen' => "pexels-daria-shevtsova-709817.jpg",
+            'banner' => "banner.jpg",
             'estado' => '1',
         ]);
 
@@ -56,6 +58,7 @@ class AliadoSeeder extends Seeder
             'fecha_inscripcion' => '2020-11-29 08:13:40',
             'cod_plan' => '3',
             'imagen' => "pexels-clem-onojeghuo-375896.jpg",
+            'banner' => "banner.jpg",
             'estado' => '1',
         ]);
 
@@ -73,6 +76,7 @@ class AliadoSeeder extends Seeder
             'fecha_inscripcion' => '2020-11-29 08:13:40',
             'cod_plan' => '2',
             'imagen' => "pexels-clem-onojeghuo-375897.jpg",
+            'banner' => "banner.jpg",
             'estado' => '1',
         ]);
 
@@ -90,6 +94,7 @@ class AliadoSeeder extends Seeder
             'fecha_inscripcion' => '2020-11-29 08:13:40',
             'cod_plan' => '1',
             'imagen' => "pexels-mehrad-vosoughi-3687999.jpg",
+            'banner' => "banner.jpg",
             'estado' => '1',
         ]);
     }

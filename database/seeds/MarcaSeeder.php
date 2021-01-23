@@ -38,5 +38,11 @@ class MarcaSeeder extends Seeder
 
         ]);
 
+        DB::table('marca')->insert([
+            'id' => 6,
+            'nombre' => 'Sin Marca'
+
+        ]);
+
     }
 }
