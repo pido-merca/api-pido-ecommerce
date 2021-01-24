@@ -81,5 +81,12 @@ class SubmedidaSeeder extends Seeder
             'nom_submedida' => 'Kilometro'
 
         ]);
+
+        DB::table('submedida')->insert([
+            'id' => 11,
+            'cod_medida' => 1,
+            'nom_submedida' => 'Unidad'
+
+        ]);
     }
 }

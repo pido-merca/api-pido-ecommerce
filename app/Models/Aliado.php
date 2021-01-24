@@ -10,7 +10,7 @@ class Aliado extends Model
     protected $fillable = [
         'id', 'nombre', 'camara_comercio', 'rut', 'cod_municipio',
         'telefono', 'correo', 'fecha_inscripcion', 'slug', 'hora_inicio', 'hora_cierre',
-        'cod_plan', 'imagen', 'estado',
+        'cod_plan', 'imagen', 'banner', 'estado',
     ];
 
     protected $hidden = [
