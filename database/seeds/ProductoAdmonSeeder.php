@@ -14,7 +14,7 @@ class ProductoAdmonSeeder extends Seeder
     {
         DB::table('producto_admon')->insert([
             'id' => 1,
-            'cod_marca' => 6,
+            'cod_marca' => 1,
             'cod_categoria' => 1,
             'cod_submedida' => 1,
             'nombre' => 'Pechuga de pollo fresca x 500 grs',
@@ -24,7 +24,7 @@ class ProductoAdmonSeeder extends Seeder
 
         DB::table('producto_admon')->insert([
             'id' => 2,
-            'cod_marca' => 6,
+            'cod_marca' => 1,
             'cod_categoria' => 1,
             'cod_submedida' => 1,
             'nombre' => 'Muslo pollo fresco x 500 grs',
@@ -34,7 +34,7 @@ class ProductoAdmonSeeder extends Seeder
 
         DB::table('producto_admon')->insert([
             'id' => 3,
-            'cod_marca' => 6,
+            'cod_marca' => 1,
             'cod_categoria' => 1,
             'cod_submedida' => 1,
             'nombre' => 'Contra muslo de pollo fresco x 500 grs',
@@ -44,7 +44,7 @@ class ProductoAdmonSeeder extends Seeder
 
         DB::table('producto_admon')->insert([
             'id' => 4,
-            'cod_marca' => 6,
+            'cod_marca' => 1,
             'cod_categoria' => 1,
             'cod_submedida' => 1,
             'nombre' => 'Muslo y contramuslo fresco x 500 grs',
@@ -54,7 +54,7 @@ class ProductoAdmonSeeder extends Seeder
 
         DB::table('producto_admon')->insert([
             'id' => 5,
-            'cod_marca' => 6,
+            'cod_marca' => 1,
             'cod_categoria' => 1,
             'cod_submedida' => 1,
             'nombre' => 'Ala completa x 500 grs',
@@ -64,7 +64,7 @@ class ProductoAdmonSeeder extends Seeder
 
         DB::table('producto_admon')->insert([
             'id' => 6,
-            'cod_marca' => 6,
+            'cod_marca' => 1,
             'cod_categoria' => 1,
             'cod_submedida' => 1,
             'nombre' => 'Filete de pechuga sin piel x 500 grs',
@@ -74,7 +74,7 @@ class ProductoAdmonSeeder extends Seeder
 
         DB::table('producto_admon')->insert([
             'id' => 7,
-            'cod_marca' => 6,
+            'cod_marca' => 1,
             'cod_categoria' => 1,
             'cod_submedida' => 1,
             'nombre' => 'Pechuga congelada x 500 grs',
@@ -84,7 +84,7 @@ class ProductoAdmonSeeder extends Seeder
 
         DB::table('producto_admon')->insert([
             'id' => 8,
-            'cod_marca' => 6,
+            'cod_marca' => 1,
             'cod_categoria' => 1,
             'cod_submedida' => 1,
             'nombre' => 'Queso costeño blando bajo de sal x 500 grs',
@@ -94,7 +94,7 @@ class ProductoAdmonSeeder extends Seeder
 
         DB::table('producto_admon')->insert([
             'id' => 9,
-            'cod_marca' => 6,
+            'cod_marca' => 1,
             'cod_categoria' => 1,
             'cod_submedida' => 1,
             'nombre' => 'Queso costeño duro x 500 grs',
@@ -104,7 +104,7 @@ class ProductoAdmonSeeder extends Seeder
 
         DB::table('producto_admon')->insert([
             'id' => 10,
-            'cod_marca' => 6,
+            'cod_marca' => 1,
             'cod_categoria' => 1,
             'cod_submedida' => 1,
             'nombre' => 'Lomo de cerdo x 500 grs',

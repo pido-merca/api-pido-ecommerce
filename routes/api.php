@@ -13,6 +13,6 @@
 */
 
 Route::group(['middleware' => ['api']], function () {
-    Route::get('/productos', 'API\ProductoAliadoController@obtenerProductosPorAliado');
+    Route::get('aliado/productos', 'API\AliadoController@obtenerProductosPorAliado');
     Route::get('/aliados', 'API\AliadoController@obtenerAliadosPorSubcategoria');
 });
