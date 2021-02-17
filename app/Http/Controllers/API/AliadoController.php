@@ -9,8 +9,8 @@ use App\Models\Aliado;
 
 class AliadoController extends Controller
 {
-    public function obtenerAliadosPorSubcategoria(){
-        return new AliadoCollection(Aliado::getAlliesToSubcategory()->get());
+    public function obtenerAliadosPorSubcategoria($category){
+        return new AliadoCollection(Aliado::getAlliesToSubcategory($category)->get());
     }
 
     public function obtenerProductosPorAliado() {

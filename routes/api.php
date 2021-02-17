@@ -14,5 +14,6 @@
 
 Route::group(['middleware' => ['api']], function () {
     Route::get('aliado/productos', 'API\AliadoController@obtenerProductosPorAliado');
-    Route::get('/aliados', 'API\AliadoController@obtenerAliadosPorSubcategoria');
+    Route::get('/aliados/{category}', 'API\AliadoController@obtenerAliadosPorSubcategoria');
+    Route::get('/aliado/file/{filename}',['uses'=>'Aliado\AliadoController@getImageAvatar']);
 });
