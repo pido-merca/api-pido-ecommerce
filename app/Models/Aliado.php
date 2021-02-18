@@ -49,8 +49,9 @@ class Aliado extends Model
         ->select(
              'a.id',
              'a.slug',
-             'a.nombre as nombre_aliado',
+             'a.nombre',
              'a.imagen',
+             'a.banner',
              'a.hora_inicio',
              'a.hora_cierre',
         );

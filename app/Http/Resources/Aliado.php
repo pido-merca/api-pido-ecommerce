@@ -12,8 +12,9 @@ class Aliado extends JsonResource
         return [
             'allyId' => $this->id,
             'allySlug' => $this->slug,
-            'allyName' => $this->nombre_aliado,
+            'allyName' => $this->nombre,
             'allyImg' => $this->imagen,
+            'allyBanner' => $this->banner,
             'startTime' => $this->hora_inicio,
             'closeTime' => $this->hora_cierre,
         ];
