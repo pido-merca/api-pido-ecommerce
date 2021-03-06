@@ -40,33 +40,60 @@ class Aliado extends Model
     public function scopeGetAlliesToSubcategory($query, $category)
     {
         return $query->from('aliado as a')
-        ->join('municipio as m','m.id','=','a.cod_municipio')
-        ->join('aliado_subcategoria as a_s','a_s.cod_aliado','=','a.id')
-        ->join('subcategoria as s','s.id','=','a_s.cod_subcategoria')
-        ->where([
-            ['s.slug','=',$category],
-        ])
-        ->select(
-             'a.id',
-             'a.slug',
-             'a.nombre',
-             'a.imagen',
-             'a.banner',
-             'a.hora_inicio',
-             'a.hora_cierre',
-        );
+            ->join('municipio as m', 'm.id', '=', 'a.cod_municipio')
+            ->join('aliado_subcategoria as a_s', 'a_s.cod_aliado', '=', 'a.id')
+            ->join('subcategoria as s', 's.id', '=', 'a_s.cod_subcategoria')
+            ->where([
+                ['s.slug', '=', $category],
+            ])
+            ->select(
+                'a.id',
+                'a.slug',
+                'a.nombre',
+                'a.imagen',
+                'a.banner',
+                'a.hora_inicio',
+                'a.hora_cierre',
+            );
     }
 
-    public function scopeGetProductsByAlly($query, $ally){
+    public function scopeGetProductsByAlly($query, $ally)
+    {
         return $query->from('aliado as a')
             ->join('producto_aliado as pra', 'pra.id_aliado', '=', 'a.id')
             ->join('producto_admon as pa', 'pra.cod_producto_admon', '=', 'pa.id')
             ->join('submedida as sm', 'pa.cod_submedida', '=', 'sm.id')
             ->join('categoria as c', 'pa.cod_categoria', '=', 'c.id')
             ->join('marca as m', 'pa.cod_marca', '=', 'm.id')
-            ->where ([
-                ['a.id', '=', $ally]
-                ])
+            ->where([
+                ['a.slug', '=', $ally]
+            ])
+            ->orderBy('pra.id', 'DESC')
+            ->select(
+                'pra.id as id_producto',
+                'pra.preciosubmedida',
+                'pa.nombre',
+                'pa.imagen',
+                'm.nombre as nombre_marca',
+                'c.id as id_categoria',
+                'c.nombre as nombre_categoria',
+                'c.slug as slug_categoria',
+                'sm.nom_submedida'
+            );
+    }
+
+    public function scopeGetProductsByCategory($query, $ally, $category)
+    {
+        return $query->from('aliado as a')
+            ->join('producto_aliado as pra', 'pra.id_aliado', '=', 'a.id')
+            ->join('producto_admon as pa', 'pra.cod_producto_admon', '=', 'pa.id')
+            ->join('submedida as sm', 'pa.cod_submedida', '=', 'sm.id')
+            ->join('categoria as c', 'pa.cod_categoria', '=', 'c.id')
+            ->join('marca as m', 'pa.cod_marca', '=', 'm.id')
+            ->where([
+                ['a.slug', '=', $ally],
+                ['c.slug', '=', $category]
+            ])
             ->orderBy('pra.id', 'DESC')
             ->select(
                 'pra.id as id_producto',
@@ -81,4 +108,3 @@ class Aliado extends Model
             );
     }
 }
-
